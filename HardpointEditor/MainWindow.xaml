@@ -1,0 +1,38 @@
+﻿<Window x:Class="HardpointEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hardpoint Editor v0.1" Height="423.101" Width="594.237"
+        Closing="Window_Closing">
+    <Grid Margin="0,0,2,18">
+
+        <Button Name="_TemplateFileHeader" Content="Select Hardpoint Template: " HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.445,0.636" Margin="0,29,0,0" Click="Load_Template_Click"/>
+        <TextBox x:Name="_TemplateFile" Text="" x:FieldModifier="public" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Margin="149,29,14,0"/>
+        <Button Name="_HardpointFileHeader"  Content="Select Hardpoint File(s):" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="144" Margin="0,53,0,0" Click="Open_Click"/>
+        <TextBox Name="_HardpointFiles" Text="" x:FieldModifier="public" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Margin="149,53,14,0"/>
+        <Button Name="_UnitStatsHeader"  Content="Select Unit Stats(s):" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="144" Margin="0,82,0,0" Click="Import_Units_Stats_Click"/>
+        <TextBox Name="_UnitStats" Text="" x:FieldModifier="public" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Margin="149,82,14,0"/>
+        <Button x:Name="_UnitFileHeader"  Content="Select Unit File(s):" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="144" Margin="0,109,0,0" Click="Import_Units_Click"/>
+        <TextBox x:Name="_UnitFiles" Text="" x:FieldModifier="public" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,109,13,0"/>
+
+
+        <Button Name="_StandardizeButton" Content="Standardize Hardpoint XML Data" IsEnabled="true" Click="Standardize_Hardpoints_Click" Margin="0,138,0,0" Height="53" VerticalAlignment="Top" HorizontalAlignment="Left" Width="145" />
+        <Button Name="_StandardizeUnitsButton" Content="Standardize Unit XML Data" IsEnabled="true" Click="Standardize_Units_Click" Margin="150,138,0,0" Height="53" VerticalAlignment="Top" HorizontalAlignment="Left" Width="145" />
+        <Button Name="_ExportsUnitsButton" Content="Export Unit XML Data" IsEnabled="true" Click="Export_Units_Click" Margin="300,138,0,0" Height="53" VerticalAlignment="Top" HorizontalAlignment="Left" Width="145" />
+
+
+        <Menu Height="24" Margin="0,0,10,0" VerticalAlignment="Top">
+            <MenuItem x:Name="_File" Header="File" Height="24" Width="37" RenderTransformOrigin="0.53,0.4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <MenuItem Name="_Open" Header="Open" Margin="0,0,-0.8,0" Click="Open_Click" />
+                <MenuItem Name="_Load_Template" Header="Load Template" Margin="0,0,-0.8,0" Click="Load_Template_Click" />
+                <MenuItem Name="_Save" Header="Save" Margin="0,0,-0.8,0" Click="Save_Click" />
+            </MenuItem>
+        </Menu>
+
+        <TextBox Name="_ErrorLog" x:FieldModifier="public" Foreground="White" Background="#FF000128" 
+                 TextWrapping="Wrap" Margin="0,196,14,-12" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto"
+                 TextChanged="ErrorLog_TextChanged" IsUndoEnabled="False"/>
+        
+
+
+    </Grid>
+</Window>
